@@ -27,7 +27,8 @@ export class AppComponent implements OnInit {
     //this.arrayIndex();
     //this.arrayEntries();
     //this.arrayKeys();
-    this.arrayValue();
+    //this.arrayValue();
+    this.forIn();
   }
 
   //for loop
@@ -118,13 +119,19 @@ export class AppComponent implements OnInit {
     const colours = ["Red", "Yellow", "Blue", "Black"];  
     const keys = colours.keys();
     console.log("keys............",...keys);
-    
   }
 
   arrayValue(){
     const colours = ["Red", "Yellow", "Blue", "Black"];  
     const value = colours.values();
     console.log("keys............",...value);
-    
+  }
+
+  forIn(){
+    for(const key in this.studentRecords){
+      console.log(`${this.studentRecords[key].name}`);  
+      console.log(`${this.studentRecords[key].id}`);   
+      console.log(`${this.studentRecords[key].marks}`);
+    }
   }
 }
